@@ -25,6 +25,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <kotlin.version>1.3.71</kotlin.version>
     <groovy.version>3.0.2</groovy.version>
+    <ff.entryPoint>com.example.functions.HelloWorld</ff.entryPoint>
   </properties>
 
   <dependencies>
@@ -271,6 +272,14 @@
           <excludes>
             <exclude>.google/</exclude>
           </excludes>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.google.cloud.functions</groupId>
+        <artifactId>function-maven-plugin</artifactId>
+        <version>0.9.1</version>
+        <configuration>
+          <functionTarget>${ff.entryPoint}</functionTarget>
         </configuration>
       </plugin>
     </plugins>
